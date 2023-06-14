@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->string('category', 100)->nullable();
             $table->boolean('alive')->nullable();
-            $table->smallInteger('composition')->nullable();
+            $table->smallInteger('composition')->nullable()->unsigned();
             $table->timestamps();
         });
     }
