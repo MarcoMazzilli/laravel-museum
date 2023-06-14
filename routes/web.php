@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/musei', function () {
+    return view('musei');
+})->name('musei');
+
+Route::get('/artisti', function () {
+    return view('artisti');
+})->name('artisti');
