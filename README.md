@@ -42,3 +42,8 @@ php artisan make:model NomeModel -m -r
 - alive->`nullable()`
 - category->`nullable()`
 - composition->`nullable()`
+
+Per lanciare i seeder lanciare questo comando : 
+```
+php artisan migrate:refresh --seed
+```
