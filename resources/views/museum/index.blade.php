@@ -32,6 +32,8 @@
             </tbody>
         </table>
 
+        <div>{{ $museums->links() }}</div>
+
     </div>
 
 @endsection

@@ -29,6 +29,8 @@
             </tbody>
         </table>
 
+        <div>{{ $artists->links() }}</div>
+
     </div>
 
 @endsection

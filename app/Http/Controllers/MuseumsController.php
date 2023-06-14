@@ -14,7 +14,7 @@ class MuseumsController extends Controller
      */
     public function index()
     {
-        $museums = Museum::all();
+        $museums = Museum::orderBy('id', 'desc')->paginate(5);
         return view('museum.index', compact('museums'));
     }
 
