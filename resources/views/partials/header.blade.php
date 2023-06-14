@@ -4,10 +4,10 @@
             <a class="nav-link" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('musei') }}">Musei</a>
+            <a class="nav-link" href="{{ route('museum.index') }}">Musei</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('artisti') }}">Artisti</a>
+            <a class="nav-link" href="{{ route('artist.index') }}">Artisti</a>
         </li>
     </ul>
 </header>

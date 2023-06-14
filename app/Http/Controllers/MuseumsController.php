@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\museum;
+use App\Models\Museum;
 use Illuminate\Http\Request;
 
 class MuseumsController extends Controller
@@ -14,7 +14,8 @@ class MuseumsController extends Controller
      */
     public function index()
     {
-        //
+        $museums = Museum::orderBy('id', 'desc')->paginate(5);
+        return view('museum.index', compact('museums'));
     }
 
     /**
