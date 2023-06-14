@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\MuseumsController;
+use App\Http\Controllers\ArtistController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [PageController::class, 'index'])->name('home');
 
-Route::get('/musei', function () {
-    return view('musei');
-})->name('musei');
-
-Route::get('/artisti', function () {
-    return view('artisti');
-})->name('artisti');
+Route::resource('museum', MuseumsController::class);
+Route::resource('artist', ArtistController::class);
