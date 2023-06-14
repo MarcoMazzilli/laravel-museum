@@ -11,19 +11,24 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Città</th>
-                    <th scope="col">Tipo</th>
+                    <th scope="col">Latitudine</th>
+                    <th scope="col">Longitudine</th>
                     <th scope="col">Azione</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">Nome</th>
-                    <td>Città</td>
-                    <td>Tipo</td>
-                    <td>
-                        <a class="btn btn-primary" href="#">VAI</a>
-                    </td>
-                </tr>
+                @foreach ($museums as $museum)
+
+                    <tr>
+                        <td>{{ $museum->museum_name }}</td>
+                        <td>{{ $museum->city }}</td>
+                        <td>{{ $museum->latitude }}</td>
+                        <td>{{ $museum->longitude }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="#">VAI</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 
