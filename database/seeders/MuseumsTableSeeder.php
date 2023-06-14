@@ -16,14 +16,16 @@ class MuseumsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $new_museum = New Museum;
+        for ($i=0; $i < 25 ; $i++) {
+            $new_museum = New Museum;
 
-        $new_museum->museum_name = $faker->company();
-        $new_museum->latitude = $faker->latitude($min = -90, $max = 90);
-        $new_museum->longitude = $faker->longitude($min = -180, $max = 180);
-        $new_museum->city = $faker->city();
-        $new_museum->type = 'undefined';
+            $new_museum->museum_name = $faker->company();
+            $new_museum->latitude = $faker->latitude($min = -90, $max = 90);
+            $new_museum->longitude = $faker->longitude($min = -180, $max = 180);
+            $new_museum->city = $faker->city();
+            $new_museum->type = 'undefined';
 
-        $new_museum->save();
+            $new_museum->save();
+        }
     }
 }
