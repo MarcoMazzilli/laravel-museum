@@ -23,6 +23,7 @@
                         <td>{{ $artist->place_of_birth }}</td>
                         <td>
                             <a class="btn btn-primary" href="#">VAI</a>
+                            <a class="btn btn-warning text-white" href="{{ route('artist.edit', $artist)}}">Edit</a>
                         </td>
                     </tr>
                 @endforeach

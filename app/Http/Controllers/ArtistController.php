@@ -58,7 +58,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        //
+        return view('artist.edit', compact('artist'));
     }
 
     /**
@@ -70,7 +70,10 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        //
+        $form_data = $request->all();
+        $artist->update($form_data);
+
+        return redirect()->route('artist.index');
     }
 
     /**
