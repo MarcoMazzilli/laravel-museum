@@ -4,7 +4,9 @@
 
     <div class="container">
 
-        <h1>Artisti</h1>
+        <h1 class="mb-4">Artisti</h1>
+
+        <span><a href={{ route('artist.create') }} class="btn btn-primary mb-4">Inserisci nuovo artista</a></span>
 
         <table class="table table-striped table-dark">
             <thead>

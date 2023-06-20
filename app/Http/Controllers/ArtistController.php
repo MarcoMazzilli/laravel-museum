@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use App\Http\Requests\ArtistRequest;
 
 class ArtistController extends Controller
 {
@@ -25,7 +26,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('artist.create');
     }
 
     /**
@@ -34,9 +35,18 @@ class ArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $new_artist = new Artist();
+
+        $new_artist->fill($form_data);
+
+        $new_artist->save();
+
+        // // una volta salvato il dato reindirizzo alla pagina show
+        // return redirect()->route('new_artist.show', $new_artist);
     }
 
     /**
