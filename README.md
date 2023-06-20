@@ -47,3 +47,16 @@ Per lanciare i seeder lanciare questo comando :
 ```
 php artisan migrate:refresh --seed
 ```
+---
+# 20/06/2023 
+
+- Creazione migration opere d'arte
+```
+name    
+year 
+description 
+image
+```
+- modificare il valore di `date_of_birth` della tabella 'artists'
+- Predisporre la crud (show,create,edit,delete)
+- Predisporre il progetto con la dashboard.
