@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Museum;
 use Illuminate\Http\Request;
+use App\Http\Requests\MuseumRequest;
 
 class MuseumsController extends Controller
 {
@@ -25,7 +26,7 @@ class MuseumsController extends Controller
      */
     public function create()
     {
-        //
+        return view('museum.create');
     }
 
     /**
@@ -34,9 +35,18 @@ class MuseumsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MuseumRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $new_museum = new Museum();
+
+        $new_museum->fill($form_data);
+
+        $new_museum->save();
+
+        // // una volta salvato il dato reindirizzo alla pagina show
+        // return redirect()->route('museums.show', $new_museum);
     }
 
     /**
