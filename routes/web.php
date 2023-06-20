@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\Admin\ArtistController;
+use App\Http\Controllers\Admin\ArtworkController;
+use App\Http\Controllers\Admin\MuseumController;
 
 
 /*
@@ -24,6 +27,9 @@ Route::middleware(['auth', 'verified'])
         ->prefix('admin')
         ->group(function() {
             Route::get('/', [DashController::class, 'index'])->name('home');
+            Route::resource('/artist', ArtistController::class);
+            Route::resource('/artwork', ArtworkController::class);
+            Route::resource('/museum', MuseumController::class);
         });
 
 // Route::get('/dashboard', function () {
