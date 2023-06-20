@@ -25,7 +25,7 @@
             <td>
               {{-- <a class="btn btn-primary" href="#">VAI</a> --}}
               {{-- <a class="btn btn-warning text-white" href="{{ route('artist.edit', $artist) }}">Edit</a> --}}
-              <a class="btn btn-primary" href="{{ route('admin.artist.show', $artist) }}">VAI</a>
+              <a class="btn btn-primary" href="{{ route('admin.artists.show', $artist) }}">VAI</a>
             </td>
           </tr>
         @endforeach

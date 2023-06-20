@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Artwork;
 
 class ArtworkController extends Controller
 {
@@ -14,7 +15,9 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        //
+      $artworks = Artwork::orderBy('id', 'desc')->paginate(5);
+
+      return view('admin.artworks.index', compact('artworks'));
     }
 
     /**
@@ -44,9 +47,9 @@ class ArtworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Artwork $artwork)
     {
-        //
+      return view('admin.artworks.show', compact('artwork'));
     }
 
     /**

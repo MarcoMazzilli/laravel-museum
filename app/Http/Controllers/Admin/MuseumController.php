@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Museum;
 
 class MuseumController extends Controller
 {
@@ -14,7 +15,9 @@ class MuseumController extends Controller
      */
     public function index()
     {
-        //
+      $museums = Museum::orderBy('id', 'desc')->paginate(5);
+
+      return view('admin.museums.index', compact('museums'));
     }
 
     /**
@@ -44,9 +47,9 @@ class MuseumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Museum $museum)
     {
-        //
+      return view('admin.museums.show', compact('museum'));
     }
 
     /**

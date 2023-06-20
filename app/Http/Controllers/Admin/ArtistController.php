@@ -17,7 +17,7 @@ class ArtistController extends Controller
     {
       $artists = Artist::orderBy('id', 'desc')->paginate(5);
 
-      return view('admin.artist.index', compact('artists'));
+      return view('admin.artists.index', compact('artists'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
-      return view('admin.artist.show', compact('artist'));
+      return view('admin.artists.show', compact('artist'));
     }
 
     /**

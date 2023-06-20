@@ -13,7 +13,8 @@
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
             <a class="nav-link"
-              href="{{ route('home') }}">vai al sito</a>
+              href="{{ route('home') }}"
+              target="_blank">vai al sito</a>
           </li>
         </ul>
         <!-- Right Side Of Navbar -->

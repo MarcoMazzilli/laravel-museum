@@ -27,9 +27,9 @@ Route::middleware(['auth', 'verified'])
         ->prefix('admin')
         ->group(function() {
             Route::get('/', [DashController::class, 'index'])->name('home');
-            Route::resource('/artist', ArtistController::class);
-            Route::resource('/artwork', ArtworkController::class);
-            Route::resource('/museum', MuseumController::class);
+            Route::resource('/artists', ArtistController::class);
+            Route::resource('/artworks', ArtworkController::class);
+            Route::resource('/museums', MuseumController::class);
         });
 
 // Route::get('/dashboard', function () {
