@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artists', function (Blueprint $table) {
+        Schema::create('artworks', function (Blueprint $table) {
             $table->id();
-            $table->string('artist_name', 50);
+            $table->string('artwork_name');
             $table->string('slug')->unique();
-            $table->string('artist_lastname', 50);
-            $table->string('place_of_birth')->nullable();
-            $table->string('date_of_birth')->nullable();
-            $table->string('category', 100)->nullable();
-            $table->boolean('alive')->nullable();
-            $table->smallInteger('composition')->nullable()->unsigned();
+            $table->text('artwork_description')->nullable();
+            $table->string('artwork_year')->nullable();
+            $table->string('artwork_image');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists');
+        Schema::dropIfExists('artworks');
     }
 };
