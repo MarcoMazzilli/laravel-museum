@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('art_works', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->string('year');
-            $table->string('image');
+            $table->string('artwork_name');
+            $table->string('slug')->unique();
+            $table->text('artwork_description')->nullable();
+            $table->string('artwork_year')->nullable();
+            $table->string('artwork_image');
             $table->timestamps();
         });
     }
