@@ -47,3 +47,27 @@ Per lanciare i seeder lanciare questo comando :
 ```
 php artisan migrate:refresh --seed
 ```
+---
+# 20/06
+ ## Creazione migration opere d'arte
+model     
+migrate  
+admin/resource  
+seeder  
+```
+name->string()
+description->text()
+year->string()
+image->string()
+```
+- Form per update/create
+- Pagina visualizzazione tabelle
+- Delete 
+- Correzione della data di nascita dell'artista
+- Cambiare coordinate dei musei 
+---
+marco d.m.-> show 
+marco spz -> auth 
+mazzilli -> update
+marica -> create
+andrea -> migration
