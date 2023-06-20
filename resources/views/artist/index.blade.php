@@ -4,7 +4,9 @@
 
     <div class="container">
 
-        <h1>Artisti</h1>
+        <h1 class="mb-4">Artisti</h1>
+
+        <span><a href={{ route('artist.create') }} class="btn btn-primary mb-4">Inserisci nuovo artista</a></span>
 
         <table class="table table-striped table-dark">
             <thead>
@@ -22,8 +24,12 @@
                         <td>{{ $artist->date_of_birth }}</td>
                         <td>{{ $artist->place_of_birth }}</td>
                         <td>
+
                             <a class="btn btn-primary" href="#">VAI</a>
                             <a class="btn btn-warning text-white" href="{{ route('artist.edit', $artist)}}">Edit</a>
+
+                            <a class="btn btn-primary" href="{{ route('artist.show', $artist) }}">VAI</a>
+
                         </td>
                     </tr>
                 @endforeach

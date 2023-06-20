@@ -4,9 +4,7 @@
 
     <div class="container">
 
-        <h1 class="mb-4">Musei</h1>
-
-        <span><a href="{{ route('museum.create')}}" class="btn btn-primary mb-4">Inserisci nuovo museo</a></span>
+        <h1>Musei</h1>
 
         <table class="table table-striped table-dark">
             <thead>
@@ -27,9 +25,7 @@
                         <td>{{ $museum->latitude }}</td>
                         <td>{{ $museum->longitude }}</td>
                         <td>
-                            <a class="btn btn-primary" href="#">VAI</a>
-                            <a class="btn btn-warning text-white" href="{{ route('museum.edit', $museum)}}">Edit</a>
-
+                            <a class="btn btn-primary" href="{{ route('museum.show', $museum) }}">VAI</a>
                         </td>
                     </tr>
                 @endforeach

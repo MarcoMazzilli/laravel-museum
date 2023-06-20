@@ -16,7 +16,7 @@
         @endif
 
         {{-- token di verifica validità del form  --}}
-        <form action="#" method="POST">
+        <form action="{{ route('museum.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">
