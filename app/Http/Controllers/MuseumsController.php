@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Museum;
+use App\Models\museum;
 use Illuminate\Http\Request;
 
 class MuseumsController extends Controller
@@ -56,9 +56,9 @@ class MuseumsController extends Controller
      * @param  \App\Models\museums  $museums
      * @return \Illuminate\Http\Response
      */
-    public function edit(museum $museums)
+    public function edit(museum $museum)
     {
-        //
+        return view('museum.edit', compact('museum'));
     }
 
     /**
@@ -68,9 +68,12 @@ class MuseumsController extends Controller
      * @param  \App\Models\museums  $museums
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, museum $museums)
+    public function update(Request $request, museum $museum)
     {
-        //
+        $form_data = $request->all();
+        $museum->update($form_data);
+
+        return redirect()->route('museum.index');
     }
 
     /**

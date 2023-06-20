@@ -26,6 +26,8 @@
                         <td>{{ $museum->longitude }}</td>
                         <td>
                             <a class="btn btn-primary" href="#">VAI</a>
+                            <a class="btn btn-warning text-white" href="{{ route('museum.edit', $museum)}}">Edit</a>
+
                         </td>
                     </tr>
                 @endforeach
