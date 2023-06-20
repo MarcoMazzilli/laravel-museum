@@ -57,7 +57,8 @@ class MuseumsController extends Controller
      */
     public function show(museum $museums)
     {
-        //
+
+        return view('museum.show', compact('museum'));
     }
 
     /**

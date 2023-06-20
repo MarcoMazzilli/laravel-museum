@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\MuseumsController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\ArtworkController;
 
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 
 Route::resource('museum', MuseumsController::class);
 Route::resource('artist', ArtistController::class);
+Route::resource('artwork', ArtworkController::class);

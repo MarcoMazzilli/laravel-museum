@@ -14,7 +14,8 @@ class ArtWorkController extends Controller
      */
     public function index()
     {
-        //
+        $artworks = ArtWork::orderBy('id', 'desc')->paginate(5);
+        return view('artwork.index', compact('artworks'));
     }
 
     /**
@@ -44,9 +45,9 @@ class ArtWorkController extends Controller
      * @param  \App\Models\ArtWork  $artWork
      * @return \Illuminate\Http\Response
      */
-    public function show(ArtWork $artWork)
+    public function show(ArtWork $artwork)
     {
-        //
+        return view('artwork.show', compact('artwork'));
     }
 
     /**
