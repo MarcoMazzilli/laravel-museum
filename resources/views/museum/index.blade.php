@@ -6,6 +6,8 @@
 
         <h1>Musei</h1>
 
+        <span><a href={{ route('museum.create') }} class="btn btn-primary mb-4">Inserisci nuovo museo</a></span>
+
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
