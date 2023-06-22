@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\MuseumRequest;
 use App\Models\Museum;
+use App\Helpers\FunctionHelper;
 
 class MuseumController extends Controller
 {
@@ -27,7 +29,7 @@ class MuseumController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.museums.create');
     }
 
     /**
@@ -36,9 +38,19 @@ class MuseumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MuseumRequest $request)
     {
-        //
+      $form_data = $request->all();
+
+      $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
+
+      $new_museum = new Museum();
+
+      $new_museum->fill($form_data);
+
+      $new_museum->save();
+
+      return redirect()->route('admin.museums.show', $new_museum);
     }
 
     /**
@@ -58,9 +70,9 @@ class MuseumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Museum $museum)
     {
-        //
+      return view('admin.museums.edit', compact('museum'));
     }
 
     /**
@@ -70,9 +82,19 @@ class MuseumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MuseumRequest $request, Museum $museum)
     {
-        //
+      $form_data = $request->all();
+
+      if($form_data['museum_name'] !== $museum->name){
+          $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
+      }else{
+          $form_data['slug'] = $museum->slug;
+      }
+
+      $museum->update($form_data);
+
+      return redirect()->route('admin.museums.show', compact('museum'));
     }
 
     /**

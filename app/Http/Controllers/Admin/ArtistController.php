@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Artist;
+use App\Http\Requests\ArtistRequest;
+use App\Helpers\FunctionHelper;
 
 class ArtistController extends Controller
 {
@@ -27,7 +29,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.artists.create');
     }
 
     /**
@@ -36,9 +38,22 @@ class ArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistRequest $request)
     {
-        //
+      $form_data = $request->all();
+
+      $str_to_slug = $form_data['artist_name'] . ' ' . $form_data['artist_lastname'];
+
+      $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
+
+      $new_artist = new Artist();
+
+      $new_artist->fill($form_data);
+
+      $new_artist->save();
+
+      return redirect()->route('admin.artists.show', $new_artist);
+
     }
 
     /**
@@ -58,9 +73,9 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Artist $artist)
     {
-        //
+        return view('admin.artists.edit', compact('artist'));
     }
 
     /**
@@ -70,9 +85,24 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArtistRequest $request, Artist $artist)
     {
-        //
+      $form_data = $request->all();
+
+      if($form_data['artist_name'] !== $artist->artist_name || $form_data['artist_lastname'] !== $artist->artist_lastname){
+        $str_to_slug = $form_data['artist_name'] . ' ' . $form_data['artist_lastname'];
+
+        $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
+
+      }else{
+        $form_data['slug'] = $artist->slug;
+      }
+
+
+
+      $artist->update($form_data);
+
+      return redirect()->route('admin.artists.show', compact('artist'));
     }
 
     /**

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1>Artists show</h1>
+  <div class="app-container p-5">
+    <h3>{{ $artist->artist_name }}</h3>
+    <p>{{ $artist->date_of_birth }}</p>
+    <p>{{ $artist->place_of_birth }}</p>
+  </div>
 @endsection

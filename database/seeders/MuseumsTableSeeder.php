@@ -22,7 +22,7 @@ class MuseumsTableSeeder extends Seeder
             $new_museum = New Museum;
 
             $new_museum->museum_name = $faker->company();
-            $new_museum->slug = FunctionHelper::generateUniqueSlug($new_museum->museum_name, New Museum);
+            $new_museum->slug = FunctionHelper::generateUniqueSlug($new_museum->museum_name, New Museum());
             $new_museum->latitude = $faker->latitude($min = -90, $max = 90);
             $new_museum->longitude = $faker->longitude($min = -180, $max = 180);
             $new_museum->city = $faker->city();

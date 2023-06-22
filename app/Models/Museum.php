@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Museum extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'museum_name',
+      'slug',
+      'latitude',
+      'longitude',
+      'city',
+      'type'
+    ];
 }
