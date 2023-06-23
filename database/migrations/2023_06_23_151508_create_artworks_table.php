@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('artworks', function (Blueprint $table) {
-            $table->id();
-            $table->string('artwork_name');
-            $table->string('slug')->unique();
-            $table->text('artwork_description')->nullable();
-            $table->string('artwork_year')->nullable();
-            $table->string('artwork_image');
-            $table->timestamps();
+          $table->id();
+          $table->string('artwork_name');
+          // $table->string('slug')->unique();
+          $table->text('artwork_description')->nullable();
+          $table->string('artwork_year')->nullable();
+          $table->string('artwork_image');
+          $table->timestamps();
         });
     }
 

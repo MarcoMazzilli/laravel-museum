@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('museums', function (Blueprint $table) {
-            $table->id();
-            $table->string('museum_name');
-            $table->string('slug')->unique();
-            $table->decimal('latitude', $precision = 9, $scale = 6)->nullable();
-            $table->decimal('longitude', $precision = 9, $scale = 6)->nullable();
-            $table->string('city');
-            $table->string('type');
-            $table->timestamps();
+          $table->id();
+          $table->string('museum_name');
+          // $table->string('slug')->unique();
+          $table->decimal('latitude', $precision = 9, $scale = 6)->nullable();
+          $table->decimal('longitude', $precision = 9, $scale = 6)->nullable();
+          $table->string('city');
+          $table->string('type');
+          $table->timestamps();
         });
     }
 

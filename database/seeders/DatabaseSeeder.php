@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
       $this->call([
         ArtistsTableSeeder::class,
         MuseumsTableSeeder::class,
-        ArtworksTableSeeder::class
+        // ArtworksTableSeeder::class
       ]);
     }
 }
