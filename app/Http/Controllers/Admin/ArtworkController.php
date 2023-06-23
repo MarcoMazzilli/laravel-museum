@@ -15,9 +15,9 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-      $artworks = Artwork::orderBy('id', 'desc')->paginate(5);
+      // $artworks = Artwork::orderBy('id', 'desc')->paginate(5);
 
-      return view('admin.artworks.index', compact('artworks'));
+      // return view('admin.artworks.index', compact('artworks'));
     }
 
     /**

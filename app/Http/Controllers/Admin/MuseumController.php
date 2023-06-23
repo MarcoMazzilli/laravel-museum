@@ -42,7 +42,7 @@ class MuseumController extends Controller
     {
       $form_data = $request->all();
 
-      $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
+      // $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
 
       $new_museum = new Museum();
 
@@ -86,11 +86,11 @@ class MuseumController extends Controller
     {
       $form_data = $request->all();
 
-      if($form_data['museum_name'] !== $museum->name){
-          $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
-      }else{
-          $form_data['slug'] = $museum->slug;
-      }
+      // if($form_data['museum_name'] !== $museum->name){
+      //     $form_data['slug'] = FunctionHelper::generateUniqueSlug($form_data['museum_name'], New Museum());
+      // }else{
+      //     $form_data['slug'] = $museum->slug;
+      // }
 
       $museum->update($form_data);
 

@@ -11,7 +11,6 @@ class Museum extends Model
 
     protected $fillable = [
       'museum_name',
-      'slug',
       'latitude',
       'longitude',
       'city',

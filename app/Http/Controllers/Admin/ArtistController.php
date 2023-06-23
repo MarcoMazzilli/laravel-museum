@@ -44,7 +44,7 @@ class ArtistController extends Controller
 
       $str_to_slug = $form_data['artist_name'] . ' ' . $form_data['artist_lastname'];
 
-      $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
+      // $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
 
       $new_artist = new Artist();
 
@@ -89,14 +89,14 @@ class ArtistController extends Controller
     {
       $form_data = $request->all();
 
-      if($form_data['artist_name'] !== $artist->artist_name || $form_data['artist_lastname'] !== $artist->artist_lastname){
-        $str_to_slug = $form_data['artist_name'] . ' ' . $form_data['artist_lastname'];
+      // if($form_data['artist_name'] !== $artist->artist_name || $form_data['artist_lastname'] !== $artist->artist_lastname){
+      //   $str_to_slug = $form_data['artist_name'] . ' ' . $form_data['artist_lastname'];
 
-        $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
+      //   // $form_data['slug'] = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
 
-      }else{
-        $form_data['slug'] = $artist->slug;
-      }
+      // }else{
+      //   $form_data['slug'] = $artist->slug;
+      // }
 
 
 
