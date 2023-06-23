@@ -27,7 +27,7 @@ class ArtistRequest extends FormRequest
             'artist_name'=> 'required|min:2|max:50',
             'artist_lastname'=> 'required|min:2|max:50',
             'category'=> 'required',
-            'alive'=> 'required',
+            'alive'=> 'required'
         ];
     }
 
@@ -41,7 +41,7 @@ class ArtistRequest extends FormRequest
             'artist_lastname.min'=>'Il cognome deve avere almeno 2 caratteri',
             'artist_lastname.max'=>'Il cognome deve avere massimo 50 caratteri',
             'category.required'=> 'La categoria è un campo obbligatorio',
-            'alive.required'=> 'Questo è un campo obbligatorio',
+            'alive.required'=> 'Questo è un campo obbligatorio'
         ];
     }
 }
