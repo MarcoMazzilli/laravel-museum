@@ -54,17 +54,6 @@
       </div>
 
       <div class="mb-3">
-        <label for="type"
-          class="form-label">Tipologia</label>
-        <input id="type"
-          value="{{ old('type') }}"
-          class="form-control"
-          name="type"
-          placeholder="Inserisci tipologia"
-          type="text">
-      </div>
-
-      <div class="mb-3">
         <label for="latitude"
           class="form-label">Latitudine</label>
         <input id="latitude"
@@ -83,6 +72,17 @@
           class="form-control"
           name="longitude"
           placeholder="Inserisci longitudine"
+          type="text">
+      </div>
+
+      <div class="mb-3">
+        <label for="type"
+          class="form-label">Tipologia</label>
+        <input id="type"
+          value="{{ old('type') }}"
+          class="form-control"
+          name="type"
+          placeholder="Inserisci tipologia"
           type="text">
       </div>
 

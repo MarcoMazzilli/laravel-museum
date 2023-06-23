@@ -3,7 +3,19 @@
 @section('content')
   <div class="app-container p-5">
 
-    <h1>Modifica scheda Museo</h1>
+    <h1>Modifica scheda Museo {{ $museum->museum_name }}</h1>
+
+    {{-- $errors->any() è true se ci sono degli errori in sessione  --}}
+    @if ($errors->any())
+      <div class="alert alert-danger"
+        role="alert">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
 
     <form action="{{ route('admin.museums.update', $museum) }}"
       method="POST">
@@ -11,36 +23,18 @@
       @method('PUT')
 
       <div class="mb-3">
-        <label for="project_name"
+        <label for="museum_name"
           class="form-label">Nome</label>
         <input type="text"
           class="form-control @error('museum_name') is-invalid @enderror"
           id="museum_name"
           name="museum_name"
-          placeholder="Insert museum's name"
+          placeholder="Inserisci nome"
           value="{{ old('museum_name', $museum->museum_name) }}">
-      </div>
 
-      <div class="mb-3">
-        <label for="latitude"
-          class="form-label">Latitudine</label>
-        <input type="text"
-          class="form-control @error('latitude') is-invalid @enderror"
-          id="latitude"
-          name="latitude"
-          placeholder="Insert latitude"
-          value="{{ old('latitude', $museum->latitude) }}">
-      </div>
-
-      <div class="mb-3">
-        <label for="longitude"
-          class="form-label">Longitudine</label>
-        <input type="text"
-          class="form-control @error('project_name') is-invalid @enderror"
-          id="longitude"
-          name="longitude"
-          placeholder="Insert longitude"
-          value="{{ old('longitude', $museum->longitude) }}">
+        @error('museum_name')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
       </div>
 
       <div class="mb-3">
@@ -50,18 +44,44 @@
           class="form-control @error('city') is-invalid @enderror"
           id="city"
           name="city"
-          placeholder="Insert city"
+          placeholder="Inserisci città"
           value="{{ old('city', $museum->city) }}">
+
+        @error('city')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-3">
+        <label for="latitude"
+          class="form-label">Latitudine</label>
+        <input type="text"
+          class="form-control"
+          id="latitude"
+          name="latitude"
+          placeholder="Inserisci latitudine"
+          value="{{ old('latitude', $museum->latitude) }}">
+      </div>
+
+      <div class="mb-3">
+        <label for="longitude"
+          class="form-label">Longitudine</label>
+        <input type="text"
+          class="form-control"
+          id="longitude"
+          name="longitude"
+          placeholder="Inserisci longitudine"
+          value="{{ old('longitude', $museum->longitude) }}">
       </div>
 
       <div class="mb-3">
         <label for="type"
           class="form-label">Tipologia</label>
         <input type="text"
-          class="form-control @error('type') is-invalid @enderror"
+          class="form-control"
           id="type"
           name="type"
-          placeholder="Insert type"
+          placeholder="Inserisci tipologia"
           value="{{ old('type', $museum->type) }}">
       </div>
 
