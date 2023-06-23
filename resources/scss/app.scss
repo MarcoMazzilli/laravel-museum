@@ -1,1 +1,29 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  .app-wrapper {
+    height: 100vh;
+
+    nav li {
+      text-transform: uppercase;
+    }
+
+    header {
+      nav {
+        height: 4rem;
+      }
+    }
+
+    aside {
+      float: left;
+      height: calc(100% - 4rem);
+      width: 15%;
+    }
+
+    main {
+      height: calc(100% - 4rem);
+      width: auto;
+      overflow: auto;
+    }
+  }
+}
