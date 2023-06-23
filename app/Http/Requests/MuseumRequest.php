@@ -23,20 +23,19 @@ class MuseumRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'museum_name'=> 'required|min:2|max:255',
-            'city'=> 'required',
-        ];
+      return [
+        'museum_name'=> 'required|min:2|max:255',
+        'city'=> 'required'
+      ];
     }
-
 
     public function messages()
     {
-        return[
-            'museum_name.required'=> 'Il nome è un campo obbligatorio',
-            'museum_name.min'=>'Il nome deve avere almeno 2 caratteri',
-            'museum_name.max'=>'Il nome deve avere massimo 255 caratteri',
-            'city.required'=> 'La città è un campo obbligatorio',
-        ];
+      return[
+        'museum_name.required'=> 'Il nome è un campo obbligatorio',
+        'museum_name.min'=>'Il nome deve avere almeno 2 caratteri',
+        'museum_name.max'=>'Il nome deve avere massimo 255 caratteri',
+        'city.required'=> 'La città è un campo obbligatorio'
+      ];
     }
 }
