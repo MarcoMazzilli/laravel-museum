@@ -14,16 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('artists', function (Blueprint $table) {
-            $table->id();
-            $table->string('artist_name', 50);
-            $table->string('artist_lastname', 50);
-            $table->string('slug')->unique();
-            $table->string('place_of_birth')->nullable();
-            $table->string('date_of_birth')->nullable();
-            $table->string('category', 100)->nullable();
-            $table->boolean('alive')->nullable();
-            $table->smallInteger('composition')->nullable()->unsigned();
-            $table->timestamps();
+          $table->id();
+          $table->string('artist_name', 50);
+          $table->string('artist_lastname', 50);
+          // $table->string('slug')->unique();
+          $table->string('place_of_birth')->nullable();
+          $table->string('date_of_birth')->nullable();
+          $table->string('category', 100)->nullable();
+          $table->boolean('alive')->nullable();
+          $table->smallInteger('composition')->nullable()->unsigned();
+          $table->timestamps();
         });
     }
 

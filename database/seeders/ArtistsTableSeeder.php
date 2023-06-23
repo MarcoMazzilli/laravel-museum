@@ -25,7 +25,7 @@ class ArtistsTableSeeder extends Seeder
             $new_artist->artist_lastname = $faker->lastName();
 
             $str_to_slug = $new_artist->artist_name . ' ' . $new_artist->artist_lastname;
-            $new_artist->slug = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
+            // $new_artist->slug = FunctionHelper::generateUniqueSlug($str_to_slug, New Artist());
 
             $new_artist->date_of_birth = $faker->date();
             $new_artist->place_of_birth = $faker->city();
