@@ -71,3 +71,5 @@ marco spz -> auth
 mazzilli -> update
 marica -> create
 andrea -> migration
+
+# la speranza
